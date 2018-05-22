@@ -6,3 +6,5 @@ BDP eksamensopgave F18
 
 %% test her 
 %% Hej piger
+
+% hej sammah
