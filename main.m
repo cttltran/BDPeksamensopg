@@ -85,7 +85,8 @@ function btnLoad_Callback(hObject, eventdata, handles)
 % hObject    handle to btnLoad (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+handles = LoadImages(handles); 
+guidata(hObject,handles); 
 
 % --- Executes on button press in btnFit.
 function btnFit_Callback(hObject, eventdata, handles)
