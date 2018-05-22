@@ -5,3 +5,4 @@ BDP eksamensopgave F18
 % Test2 fatema
 
 %% test her 
+%% Hej piger
