@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 22-May-2018 15:45:53
+% Last Modified by GUIDE v2.5 22-May-2018 17:09:06
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -119,8 +119,8 @@ end
 
 
 % --- Executes on slider movement.
-function sldImage_Callback(hObject, eventdata, handles)
-% hObject    handle to sldImage (see GCBO)
+function sldImages_Callback(hObject, eventdata, handles)
+% hObject    handle to sldImages (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
@@ -129,8 +129,8 @@ function sldImage_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function sldImage_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to sldImage (see GCBO)
+function sldImages_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to sldImages (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
