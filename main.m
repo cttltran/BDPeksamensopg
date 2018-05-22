@@ -78,9 +78,6 @@ function btnROI_Callback(hObject, eventdata, handles)
 % hObject    handle to btnROI (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-if isfield(handles.MyData,'ROIpos')
-    handles.MyData = rmfield(handles.MyData,'ROIpos');
-end
 
 
 % --- Executes on button press in btnLoad.
