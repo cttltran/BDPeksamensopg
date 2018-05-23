@@ -38,6 +38,7 @@ end
 % Save number of images and setup slider
 numDICOM = length(MyData.Dicom);
 set(handles.sldImages,'Max',numDICOM);
+set(handles.sldImages,'Min',1);
 set(handles.sldImages,'Value',1);
 set(handles.sldImages,'SliderStep',[1/(numDICOM-1) 5/(numDICOM-1)]);
 
