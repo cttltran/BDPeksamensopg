@@ -85,7 +85,7 @@ function btnLoad_Callback(hObject, eventdata, handles)
 % hObject    handle to btnLoad (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-handles.MyData = LoadImages(handles); 
+handles.MyData = loadImages(handles); 
 guidata(hObject,handles); 
 
 % --- Executes on button press in btnFit.
@@ -126,7 +126,7 @@ function sldImages_Callback(hObject, eventdata, handles)
 
 % Hints: get(hObject,'Value') returns position of slider
 %        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
-
+showImages(handles);
 
 % --- Executes during object creation, after setting all properties.
 function sldImages_CreateFcn(hObject, eventdata, handles)
