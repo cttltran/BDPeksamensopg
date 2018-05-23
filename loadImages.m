@@ -14,22 +14,25 @@ if dirName ~= 0
     wb = waitbar(0,'Loading dicom files...');
     % Diable GUI fields when loading images
     % handles = disableFields(handles);
+    count = 1;
     for ii=1:numFiles
-    Info = dicominfo(fullfile(dirName,files(ii).name));
-    MyData.Image = dicomread(fullfile(dirName,files(ii).name));
-    MyData.Info = Info;
-    MyData.EchoTime = Info.EchoTime; 
-    MyData.sliceLocation = Info.SliceLocation;
+        Info = dicominfo(fullfile(dirName,files(ii).name));
+        
+        MyData.Dicom(count).Image = dicomread(Info);
+        MyData.Dicom(count).Info = Info;
+        MyData.Dicom(count).EchoTime = Info.EchoTime; 
+        MyData.Dicom(count).SliceLocation = Info.SliceLocation;
+        waitbar(ii/numFiles,wb);
+        
+       count = count + 1;
     end
-    waitbar(ii/numFiles,wb);
-end
-
+    
 if exist('wb','var')
     close(wb);
 end
 
 % Save number of images and setup slider
-numDICOM = length(MyData.Image);
+numDICOM = length(MyData.Dicom);
 set(handles.sldImages,'Max',numDICOM);
 set(handles.sldImages,'Value',1);
 set(handles.sldImages,'SliderStep',[1/(numDICOM-1) 5/(numDICOM-1)]);
