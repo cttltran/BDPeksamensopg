@@ -14,11 +14,15 @@ if dirName ~= 0
     wb = waitbar(0,'Loading dicom files...');
     % Diable GUI fields when loading images
     % handles = disableFields(handles);
+    
     count = 1;
     for ii=1:numFiles
         Info = dicominfo(fullfile(dirName,files(ii).name));
         
         MyData.Dicom(count).Image = dicomread(Info);
+        % Update the images to double with values between 0 to 1
+        MyData.Dicom(count).Image = double(MyData.Dicom(count).Image)...
+            ./max(max(double(MyData.Dicom(count).Image)));
         MyData.Dicom(count).Info = Info;
         MyData.Dicom(count).EchoTime = Info.EchoTime; 
         MyData.Dicom(count).SliceLocation = Info.SliceLocation;
