@@ -22,7 +22,7 @@ function varargout = main(varargin)
 
 % Edit the above text to modify the response to help main
 
-% Last Modified by GUIDE v2.5 23-May-2018 12:04:59
+% Last Modified by GUIDE v2.5 23-May-2018 14:25:32
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -78,7 +78,12 @@ function btnROI_Callback(hObject, eventdata, handles)
 % hObject    handle to btnROI (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+if isfield(handles.MyData,'ROIpos')
+    handles.MyData = rmfield(handles.MyData,'ROIpos');
+end
+showImages(handles);
+handles.MyData.ROIpos = drawROI(handles);
+guidata(hObject,handles);
 
 % --- Executes on button press in btnLoad.
 function btnLoad_Callback(hObject, eventdata, handles)
@@ -127,6 +132,10 @@ function sldImages_Callback(hObject, eventdata, handles)
 % Hints: get(hObject,'Value') returns position of slider
 %        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
 showImages(handles);
+if isfield(handles.MyData,'ROI')
+    handles.MyData.ROI = drawROI(handles);
+    guidata(hObject,handles);    
+end
 
 % --- Executes during object creation, after setting all properties.
 function sldImages_CreateFcn(hObject, eventdata, handles)
@@ -189,3 +198,12 @@ function sldcontrast1_CreateFcn(hObject, eventdata, handles)
 if isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor',[.9 .9 .9]);
 end
+
+
+% --- Executes on button press in btnZoom.
+function btnZoom_Callback(hObject, eventdata, handles)
+% hObject    handle to btnZoom (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+handles = zoomImage(handles);
+guidata(hObject,handles);
