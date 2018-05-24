@@ -9,5 +9,6 @@ else
 end
     handles.MyData.XLim = get(handles.axImage,'XLim');
     handles.MyData.YLim = get(handles.axImage,'YLim');
+    
 end
 

@@ -79,12 +79,14 @@ function btnROI_Callback(hObject, eventdata, handles)
 % hObject    handle to btnROI (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+set(handles.txtInfo,'String',sprintf('Draw a ROI'));
 if isfield(handles.MyData,'ROIpos')
     handles.MyData = rmfield(handles.MyData,'ROIpos');
 end
 showImages(handles);
 handles.MyData.ROIpos = drawROI(handles);
 guidata(hObject,handles);
+
 
 % --- Executes on button press in btnLoad.
 function btnLoad_Callback(hObject, eventdata, handles)
@@ -209,6 +211,8 @@ function btnZoom_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 handles = zoomImage(handles);
 guidata(hObject,handles);
+set(handles.txtInfo,'String',sprintf('Zoom'));
+
 
 
 % --- Executes on selection change in menuExclude.

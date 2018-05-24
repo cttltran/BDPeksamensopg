@@ -15,5 +15,5 @@ end
     % addNewpositionCalback
     addNewPositionCallback(ROI,@(pos) calcROI(handles,ROI,pos));
     calcROI(handles,ROI,ROIpos);
-end
+    end
 

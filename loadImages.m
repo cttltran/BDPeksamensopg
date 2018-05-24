@@ -45,5 +45,6 @@ set(handles.sldImages,'SliderStep',[1/(numDICOM-1) 5/(numDICOM-1)]);
 % Set text to slider to numbers of images
 set(handles.txtNum,'String',sprintf('1/%d',numDICOM));
 
+
 end
 
