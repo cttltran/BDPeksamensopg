@@ -9,6 +9,16 @@ set(handles.axCurv , 'visible', 'off')
 set (handles.btnROI, 'enable', 'off')
 set (handles.btnZoom, 'enable', 'off')
 set (handles.btnSave, 'enable', 'off')
+set(handles.sldImages,'enable',  'off')
+
+set(handles.txtNum, 'visible', 'off')
+set(handles.txtPatient, 'visible', 'off')
+set(handles.txtT2_1,'visible', 'off')
+set(handles.txtT2_2,'visible', 'off')
+
+
+
+
 
 end
 

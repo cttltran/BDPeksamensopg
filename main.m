@@ -61,6 +61,7 @@ guidata(hObject, handles);
 % UIWAIT makes main wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+    handles = disableFields(handles);
 
 % --- Outputs from this function are returned to the command line.
 function varargout = main_OutputFcn(hObject, eventdata, handles) 
@@ -92,6 +93,7 @@ function btnLoad_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 handles.MyData = loadImages(handles); 
 guidata(hObject,handles); 
+handles = activateFields(handles);
 
 % --- Executes on button press in btnFit.
 function btnFit_Callback(hObject, eventdata, handles)
