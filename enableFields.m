@@ -1,4 +1,4 @@
-function  [ handles ] = activateFields( handles )
+function  [ handles ] = enableFields( handles )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
