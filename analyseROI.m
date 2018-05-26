@@ -1,4 +1,4 @@
-function calcROI( handles, ROI, pos )
+function analyseROI( handles, ROI, pos )
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
 

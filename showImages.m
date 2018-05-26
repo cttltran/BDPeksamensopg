@@ -3,10 +3,10 @@ function showImages(handles)
 %   The function also gives the opportunity to edit contrast
 
 % Read the position of the slider
-ImagePos = round(get(handles.sldImages,'Value'));
+ImagePos = round(get(handles.sldSlice,'Value'));
 
 % Setup text for the slider and show loaded images
-set(handles.txtNum,'String',...
+set(handles.txtSlice,'String',...
     sprintf('%i/%i',ImagePos,length(handles.MyData.imgT2)));
 
 % Show current T2 image

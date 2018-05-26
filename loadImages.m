@@ -50,13 +50,13 @@ end
 
 % Save number of images and setup slider
 numT2 = length(MyData.imgT2);
-set(handles.sldImages,'Max',numT2);
-set(handles.sldImages,'Min',1);
-set(handles.sldImages,'Value',1);
-set(handles.sldImages,'SliderStep',[1/(numT2-1) 5/(numT2-1)]);
+set(handles.sldSlice,'Max',numT2);
+set(handles.sldSlice,'Min',1);
+set(handles.sldSlice,'Value',1);
+set(handles.sldSlice,'SliderStep',[1/(numT2-1) 5/(numT2-1)]);
 
 % Set text to slider to numbers of images
-set(handles.txtNum,'String',sprintf('1/%d',numT2));
+set(handles.txtSlice,'String',sprintf('1/%d',numT2));
 
 end
 
