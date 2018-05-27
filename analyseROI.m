@@ -15,7 +15,8 @@ h = findobj(handles.axImage,'Tag','ROI');
     end
 
 % aflæs position (hvilket billede) for slider
-ImPosition = round(get(handles.sldImages,'Value'));
+ImPosition = round(get(handles.sldSlice,'Value'));
+
 w = size(handles.MyData.imgT2(ImPosition).Image,1);
 h = size(handles.MyData.imgT2(ImPosition).Image,2);
 bw = poly2mask(ROIvertices(:,1),ROIvertices(:,2),w,h);

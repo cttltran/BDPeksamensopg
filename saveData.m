@@ -2,18 +2,20 @@ function [handles]= saveData(handles)
 %SAVEDATA Summary of this function goes here
 %   Detailed explanation goes here
 
-e = actxserver('Excel.Application');
+% Open existing File by use of ActiveX
+excel = actxserver('Excel.Application');
 filename = 'oxygeneringsgraddata.xlsx';
-eW = e.Workbooks;
-eF = eW.Open([pwd '\' filename]);
+%Add a workbook
+excelW = excel.Workbooks;
+excelF = excelW.Open([pwd '\' filename]);
 
-eR = e.ActiveSheet.UsedRange.Address;
+excelR = excel.ActiveSheet.UsedRange.Address;
 
 range = ['A' eR(end)+1];
 
-eW.Close;
-e.Quit;
-e.delete;
+excelW.Close;
+excel.Quit;
+excel.delete;
 
 MyData = 1;
 

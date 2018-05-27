@@ -1,7 +1,5 @@
 function ROIpos = drawROI(handles)
-%UNTITLED4 Summary of this function goes here
 %   Detailed explanation goes here
-
 axes(handles.axImage);
 if isfield(handles.MyData,'ROIpos')
     % opret elliptisk ROI og gem dens handle 
