@@ -1,6 +1,6 @@
-function handles = saveToExcel (handles)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function handles = saveData(handles)
+%SAVEDATA() The function saves and export data to an excel file
+%   The function checks for existing file or creates a new excel file
 
 clc
 clear 
@@ -11,7 +11,7 @@ NewValues ={(handles.txtNum)};
 
 % Check if you have created an Excel file previously or not 
 checkforfile=exist(strcat(pwd,'\','ExcelFile.xls'),'file');
-if checkforfile==0; % if not create new one
+if checkforfile==0 % if not create new one
     header = {'SliceLocation', 'Echotime' 'Mean' , 'T2'};
     xlswrite('ExcelFile',header,'Sheetname','A1');
     N=0;
@@ -24,7 +24,4 @@ BB=strcat('B',num2str(N+2));
 %xlswrite('ExcelFile',NewName,'Sheetname',AA);
 xlswrite('ExcelFile',NewValues,'Sheetname',BB);
 
-
-
 end
-
